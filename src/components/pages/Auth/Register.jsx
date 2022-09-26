@@ -11,6 +11,7 @@ import Select from '@mui/material/Select';
 
 
 import "./Registration.css"
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -20,9 +21,16 @@ const Register = () => {
   const [passwordConfirmation,setPasswordConfirmation]=useState("")
   const [role,setRole]=useState("")
 
+  const navigate=useNavigate()
+
 
   const saveData=()=>{
 
+    if(role=="")
+    {
+      setRole("student")
+    }
+    
     const data={
       name:name,
       email:email,
@@ -57,6 +65,7 @@ const handdleError=(json)=>{
     else
     {
       alert(json.message) 
+      navigate("/login")
     }
 }
 

@@ -4,11 +4,13 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "./Registration.css"
 import Alert from '@mui/material/Alert';
-
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const Login = () => {
 
    const [email,setEmail]=useState("")
-  const [password,setPassword]=useState("")
+   const [password,setPassword]=useState("")
+   const navigate=useNavigate()
   
 
   const saveData=()=>{
@@ -35,8 +37,6 @@ fetch("http://localhost:8000/api/user/login", {
 
 
 const handdleError=(json)=>{
-  console.log(json.status);
-
   var status=json.status
     if(status==="failed")
     {
@@ -45,7 +45,38 @@ const handdleError=(json)=>{
     }
     else
     {
-      alert(json.message) 
+      
+     // console.log(json.data);
+      const {role,isActive}=json.data;
+
+      if(role=="admin")
+      {
+        if(isActive==true)
+        {
+          navigate("/admin")
+        }
+        else{
+          alert("please contact admin")
+        }
+      }
+      else if(role=="teacher")
+      {
+        if(isActive==true)
+        {
+          navigate("/teacher")
+        }
+        else{
+          alert("please contact admin")
+        }
+      }
+      else{
+        //console.log("student");
+        navigate("/student")
+        
+      }
+     // alert(json.message)
+        
+       
     }
 }
 
