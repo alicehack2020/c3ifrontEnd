@@ -6,6 +6,12 @@ import Register from "./components/pages/Auth/Register"
 import Admin from "./components/pages/dashboard/Admin"
 import Teacher from "./components/pages/dashboard/Teacher"
 import Student from "./components/pages/dashboard/Student"
+
+import AddTeacher from "./components/pages/dashboard/AddTeacher"
+import AddCourse from './components/pages/dashboard/AddCourse';
+import VideoList from './components/pages/dashboard/VideoList';
+import AddVideo from './components/pages/dashboard/AddVideo';
+
 function App() {
   return (
      <>
@@ -17,6 +23,17 @@ function App() {
         <Route path='/admin' element={<Admin/>}/>
         <Route path='/student' element={<Student/>}/>
         <Route path='/teacher' element={<Teacher/>}/>
+
+        <Route path='/admin/addteacher' element={<AddTeacher/>}/>
+
+        <Route path='/admin/addcourse' element={<AddCourse/>}/>
+
+        <Route path='/admin/videolist/:course_id' element={<VideoList/>}/>
+
+        <Route path='/admin/addvideo/:course_id' element={<AddVideo/>}/>
+
+
+
       </Routes>
      </>
   );

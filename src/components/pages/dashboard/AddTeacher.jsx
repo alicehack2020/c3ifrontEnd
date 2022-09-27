@@ -6,6 +6,7 @@ import Button from '@mui/material/Button';
 
 import "../Auth/Registration.css"
 import { useNavigate } from 'react-router-dom';
+import NavBarAfterLogin from '../navbar/NavBarAfterLogin';
 
 const AddTeacher = () => {
 
@@ -54,7 +55,8 @@ const handdleError=(json)=>{
     }
     else
     {
-      alert(json.message) 
+     // alert(json.message) 
+     alert("Teacher Added successfully")
       navigate("/admin")
     }
 }
@@ -64,15 +66,15 @@ const handdleError=(json)=>{
  
   return (
     <div>
-      <NavBarLogin/>
+      <NavBarAfterLogin/>
 
       <div className="main">
         <div className='register_form'>
-            <TextField className='TextField' label="Enter your name" variant="outlined" value={name} onChange={(e)=>setName(e.target.value)} sx={{marginTop:"60px"}}/>
-            <TextField className='TextField' label="Enter your email" variant="outlined" value={email} onChange={(e)=>setEmail(e.target.value)} sx={{marginTop:"30px"}}/>
-            <TextField className='TextField' label="Enter your password" variant="outlined"  type="password" value={password} onChange={(e)=>setPassword(e.target.value)} sx={{marginTop:"30px"}}/>
-            <TextField className='TextField' label="Enter your confirm Password" variant="outlined"  type="password" value={passwordConfirmation} onChange={(e)=>setPasswordConfirmation(e.target.value)} sx={{marginTop:"30px",marginBottom:"30px"}}/>
-            <Button className="Button" variant="contained" onClick={saveData} sx={{width:"20rem"}}>Register</Button>       
+            <TextField className='TextField' label="Enter teacher name" variant="outlined" value={name} onChange={(e)=>setName(e.target.value)} sx={{marginTop:"60px"}}/>
+            <TextField className='TextField' label="Enter teacher email" variant="outlined" value={email} onChange={(e)=>setEmail(e.target.value)} sx={{marginTop:"30px"}}/>
+            <TextField className='TextField' label="Enter teacher password" variant="outlined"  type="password" value={password} onChange={(e)=>setPassword(e.target.value)} sx={{marginTop:"30px"}}/>
+            <TextField className='TextField' label="Enter teacher confirm Password" variant="outlined"  type="password" value={passwordConfirmation} onChange={(e)=>setPasswordConfirmation(e.target.value)} sx={{marginTop:"30px",marginBottom:"30px"}}/>
+            <Button className="Button" variant="contained" onClick={saveData} sx={{width:"20rem"}}>Add</Button>       
         </div>
       </div>
 

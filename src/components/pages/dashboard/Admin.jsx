@@ -1,5 +1,6 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import "./Admin.css"
 const Admin = () => {
@@ -7,6 +8,7 @@ const Admin = () => {
   const [teacher,setTeacher]=useState([])
   const [course,setCourse]=useState([])
 
+  const navigate=useNavigate()
 
   useEffect(()=>{
     fetch("http://localhost:8000/api/user/teacherlist").then(res=>res.json()).then(data=>setTeacher(data.data))
@@ -22,6 +24,19 @@ const Admin = () => {
      },[])
 
 
+
+     const sendToteacher=()=>{
+        navigate("/admin/addteacher")
+     }
+
+
+     const sendToCourse=()=>{
+      navigate("/admin/addcourse")
+   }
+
+   const goToVideoList=(id)=>{
+    navigate("/admin/videolist/"+id)
+   }
 
   return (
     <div>
@@ -51,7 +66,7 @@ const Admin = () => {
 
               <div className='group'>
                 <h3>Teacher List</h3>
-                <Button variant="outlined">Add Teacher</Button>
+                <Button variant="outlined" onClick={sendToteacher}>Add Teacher</Button>
               </div>
              
 
@@ -72,7 +87,7 @@ const Admin = () => {
               <div>
               <div className='group'>
                 <h3>Course List</h3>
-                <Button variant="outlined">Add Course</Button>
+                <Button variant="outlined" onClick={sendToCourse}>Add Course</Button>
               </div>
               <div className='grid'>
                     {
@@ -80,6 +95,7 @@ const Admin = () => {
                         <div className='sub_div'>
                           <h3>Name:{course.name}</h3>
                           <h3>info:{course.description}</h3>
+                          <Button variant="outlined" onClick={()=>goToVideoList(course._id)}>Open</Button>
                         </div>
                     ))
                   }
