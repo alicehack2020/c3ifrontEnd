@@ -57,6 +57,7 @@ const handdleError=(json)=>{
 
       <div className="main">
         <div className='register_form'>
+            <h3>Payment Form</h3>
             <TextField className='TextField' type="number" label="Enter card number" variant="outlined"   sx={{marginTop:"30px"}}/>
             <TextField className='TextField' label="Enter cvv" variant="outlined"  type="password"   sx={{marginTop:"30px",marginBottom:"30px"}}/>
             <TextField className='TextField' label="Enter Expiry Date" variant="outlined"  sx={{marginBottom:"30px"}}/>

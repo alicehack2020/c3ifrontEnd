@@ -1,0 +1,15 @@
+.landing{
+    margin-top: 10px;
+}
+.flex_home{
+    display: flex;
+    justify-content: space-around;
+}
+.contact_form{
+    display: flex;
+    flex-direction: column;    
+}
+iframe{
+    width: 40rem;
+    height: 20rem;
+}

@@ -1,8 +1,15 @@
 .NavBarmain{
+    width: 100%;
     display: flex;
     justify-content: flex-end;
-}
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    margin-bottom: 10px;
+}   
 .link{
     padding: 20px;
     text-decoration: none;
+}
+.information{
+    width: 20rem;
+    margin: 100px;
 }
