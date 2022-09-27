@@ -3,39 +3,29 @@ import NavBarLogin from '../navbar/NavBarlogin'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 
-
-import "./Registration.css"
+import "../Auth/Registration.css"
 import { useNavigate } from 'react-router-dom';
 
-const Register = () => {
+const AddTeacher = () => {
 
   const [name,setName]=useState("")
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const [passwordConfirmation,setPasswordConfirmation]=useState("")
-  const [role,setRole]=useState("")
+   
 
   const navigate=useNavigate()
 
 
   const saveData=()=>{
 
-    if(role=="")
-    {
-      setRole("student")
-    }
-    
+     
     const data={
       name:name,
       email:email,
       password:password,
-      role:role,
+      role:"teacher",
       password_confirmation:passwordConfirmation
     }
 
@@ -65,16 +55,12 @@ const handdleError=(json)=>{
     else
     {
       alert(json.message) 
-      navigate("/login")
+      navigate("/admin")
     }
 }
 
 
 
- 
-  const handleChange = (event) => {
-    setRole(event.target.value);
-  };
  
   return (
     <div>
@@ -86,22 +72,7 @@ const handdleError=(json)=>{
             <TextField className='TextField' label="Enter your email" variant="outlined" value={email} onChange={(e)=>setEmail(e.target.value)} sx={{marginTop:"30px"}}/>
             <TextField className='TextField' label="Enter your password" variant="outlined"  type="password" value={password} onChange={(e)=>setPassword(e.target.value)} sx={{marginTop:"30px"}}/>
             <TextField className='TextField' label="Enter your confirm Password" variant="outlined"  type="password" value={passwordConfirmation} onChange={(e)=>setPasswordConfirmation(e.target.value)} sx={{marginTop:"30px",marginBottom:"30px"}}/>
-          <Box sx={{ maxWidth: 350,marginBottom:"30px",width:"20rem" }}>
-            <FormControl fullWidth>
-            <InputLabel id="demo-simple-select-label">Please Select Role</InputLabel>
-                <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                value={role}
-                label="Role"
-                onChange={handleChange}>
-                  <MenuItem value={"student"}>Student</MenuItem>
-                  <MenuItem value={"teacher"}>Teacher</MenuItem>
-                  <MenuItem value={"admin"}>Admin</MenuItem>
-                </Select>
-            </FormControl>
-      </Box>
-      <Button className="Button" variant="contained" onClick={saveData} sx={{width:"20rem"}}>Register</Button>       
+            <Button className="Button" variant="contained" onClick={saveData} sx={{width:"20rem"}}>Register</Button>       
         </div>
       </div>
 
@@ -110,4 +81,4 @@ const handdleError=(json)=>{
   )
 }
 
-export default Register
+export default AddTeacher
