@@ -3,9 +3,7 @@ import NavBarLogin from '../navbar/NavBarlogin'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "./Registration.css"
-import Alert from '@mui/material/Alert';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; 
 const Login = () => {
 
    const [email,setEmail]=useState("")
@@ -47,11 +45,11 @@ const handdleError=(json)=>{
     {
       
      // console.log(json.data);
-      const {role,isActive,_id}=json.data;
+      const {role}=json.data;
 
       localStorage.setItem("user",JSON.stringify(json.data))
       
-      if(role=="admin")
+      if(role==="admin")
       {
         //if(isActive==true)
         //{
@@ -61,7 +59,7 @@ const handdleError=(json)=>{
          // alert("please contact admin")
         //}
       }
-      else if(role=="teacher")
+      else if(role==="teacher")
       {
         //if(isActive==true)
         //{

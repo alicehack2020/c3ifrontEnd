@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import {  useNavigate } from 'react-router-dom'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import "./Admin.css"
 const Student = () => { 
@@ -31,7 +31,7 @@ const Student = () => {
         })
         .then(response => response.json())
         .then(json =>setuserData(json.data));
-     },[])
+     },[userDatalocal._id])
 
 
 
@@ -44,7 +44,7 @@ const Student = () => {
     var flage=0
     for(var i=0;i<=course.length;i++)
     {
-      if(course[i]==course_id)
+      if(course[i]===course_id)
       {
         flage=1
         break
@@ -54,7 +54,7 @@ const Student = () => {
     }
 
 
-    if(flage==1)
+    if(flage===1)
     {
       navigate("/student/videolist/"+course_id)
     }

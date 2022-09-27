@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import {useNavigate } from 'react-router-dom'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import "./Admin.css"
 const Admin = () => {
@@ -8,7 +8,7 @@ const Admin = () => {
   const [teacher,setTeacher]=useState([])
   const [course,setCourse]=useState([])
   
-  const {id,courses}=JSON.parse(localStorage.getItem("user"))
+  // const {id,courses}=JSON.parse(localStorage.getItem("user"))
 
 
   const navigate=useNavigate()

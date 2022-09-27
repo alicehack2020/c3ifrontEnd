@@ -1,6 +1,6 @@
 import { Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import "./Admin.css"
 import "./VideoList.css"
@@ -28,7 +28,7 @@ const VideoList = () => {
     })
     .then(response => response.json())
     .then(json =>setVideoList(json.data));
-  },[])
+  },[course_id])
 
 
   const sendToAddVideo=()=>{
@@ -36,7 +36,7 @@ const VideoList = () => {
   }
 
   const sendToWeb=(url)=>{
-    if(url=="")
+    if(url==="")
     {
       alert("not available")
     }

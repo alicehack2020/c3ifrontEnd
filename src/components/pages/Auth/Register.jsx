@@ -3,11 +3,11 @@ import NavBarLogin from '../navbar/NavBarlogin'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+// import Box from '@mui/material/Box';
+// import InputLabel from '@mui/material/InputLabel';
+// import MenuItem from '@mui/material/MenuItem';
+// import FormControl from '@mui/material/FormControl';
+// import Select from '@mui/material/Select';
 
 
 import "./Registration.css"
@@ -26,7 +26,7 @@ const Register = () => {
 
   const saveData=()=>{
 
-    if(role=="")
+    if(role==="")
     {
       setRole("student")
     }
@@ -72,9 +72,9 @@ const handdleError=(json)=>{
 
 
  
-  const handleChange = (event) => {
-    setRole(event.target.value);
-  };
+  // const handleChange = (event) => {
+  //   setRole(event.target.value);
+  // };
  
   return (
     <div>

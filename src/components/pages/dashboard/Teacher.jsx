@@ -7,7 +7,7 @@ const Teacher = () => {
   const [student,setStudent]=useState([])
   const [course,setCourse]=useState([])
   
-  const {id,courses}=JSON.parse(localStorage.getItem("user"))
+  // const {id,courses}=JSON.parse(localStorage.getItem("user"))
 
 
   const navigate=useNavigate()

@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "../Auth/Registration.css"
 
 import { useNavigate, useParams } from 'react-router-dom';
- const EnrollCourse = () => {
-    const [email,setEmail]=useState("")
-    const [password,setPassword]=useState("")
-   
+ const EnrollCourse = () => 
+ {
   const navigate=useNavigate()
   const params=useParams()
   const course_id=params.course_id;
