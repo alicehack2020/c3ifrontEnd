@@ -104,7 +104,6 @@ const deleteCourse=(courseid)=>{
     else
     {
       fetch("http://localhost:8000/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
- 
     }
 }
 
@@ -171,7 +170,6 @@ const deleteCourse=(courseid)=>{
                           <h3>info:{course.description}</h3>
                           <Button variant="outlined" onClick={()=>goToVideoList(course._id)}>Open</Button>
                           <Button variant='outlined' onClick={()=>deleteCourse(course._id)}>delete</Button>
-
                         </div>
                     ))
                   }

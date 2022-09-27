@@ -29,15 +29,23 @@ function App() {
         <Route path='/teacher' element={<Teacher/>}/>
 
         <Route path='/admin/addteacher' element={<AddTeacher/>}/>
+
         <Route path='/admin/addcourse' element={<AddCourse/>}/>
         <Route path='/admin/videolist/:course_id' element={<VideoList/>}/>
         <Route path='/admin/addvideo/:course_id' element={<AddVideo/>}/>
-
-        <Route path='/student/videolist/:course_id' element={<StudentVideoList/>}/>
-        <Route path='/student/enrollcourse/:course_id' element={<EnrollCourse/>}/>
-
         <Route path='/admin/addstudent' element={<AddStudent/>}/>
 
+        {/* for teacher */}
+
+        <Route path='/teacher/addcourse' element={<AddCourse/>}/>
+        <Route path='/teacher/videolist/:course_id' element={<VideoList/>}/>
+        <Route path='/teacher/addvideo/:course_id' element={<AddVideo/>}/>
+        <Route path='/teacher/addstudent' element={<AddStudent/>}/>
+
+        {/* for student */}
+        <Route path='/student/videolist/:course_id' element={<StudentVideoList/>}/>
+        <Route path='/student/enrollcourse/:course_id' element={<EnrollCourse/>}/>
+        
 
 
       </Routes>
