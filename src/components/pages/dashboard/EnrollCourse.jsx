@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import NavBarLogin from '../navbar/NavBarlogin'
+import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "../Auth/Registration.css"
@@ -53,12 +53,13 @@ const handdleError=(json)=>{
  
   return (
     <div>
-      <NavBarLogin/>
+      <NavBarAfterLogin/>
 
       <div className="main">
         <div className='register_form'>
-            <TextField className='TextField' label="Enter your email" variant="outlined" value={email} onChange={(e)=>setEmail(e.target.value)} sx={{marginTop:"30px"}}/>
-            <TextField className='TextField' label="Enter your password" variant="outlined"  type="password" value={password} onChange={(e)=>setPassword(e.target.value)} sx={{marginTop:"30px",marginBottom:"30px"}}/>
+            <TextField className='TextField' type="number" label="Enter card number" variant="outlined"   sx={{marginTop:"30px"}}/>
+            <TextField className='TextField' label="Enter cvv" variant="outlined"  type="password"   sx={{marginTop:"30px",marginBottom:"30px"}}/>
+            <TextField className='TextField' label="Enter Expiry Date" variant="outlined"  sx={{marginBottom:"30px"}}/>
             <Button className="Button" variant="contained" onClick={saveData} sx={{width:"20rem"}}>Enroll</Button>       
         </div>
       </div>

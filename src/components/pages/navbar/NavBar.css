@@ -1,0 +1,8 @@
+.NavBarmain{
+    display: flex;
+    justify-content: flex-end;
+}
+.link{
+    padding: 20px;
+    text-decoration: none;
+}
