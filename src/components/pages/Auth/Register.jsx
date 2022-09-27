@@ -86,7 +86,8 @@ const handdleError=(json)=>{
             <TextField className='TextField' label="Enter your email" variant="outlined" value={email} onChange={(e)=>setEmail(e.target.value)} sx={{marginTop:"30px"}}/>
             <TextField className='TextField' label="Enter your password" variant="outlined"  type="password" value={password} onChange={(e)=>setPassword(e.target.value)} sx={{marginTop:"30px"}}/>
             <TextField className='TextField' label="Enter your confirm Password" variant="outlined"  type="password" value={passwordConfirmation} onChange={(e)=>setPasswordConfirmation(e.target.value)} sx={{marginTop:"30px",marginBottom:"30px"}}/>
-          <Box sx={{ maxWidth: 350,marginBottom:"30px",width:"20rem" }}>
+         
+          {/* <Box sx={{ maxWidth: 350,marginBottom:"30px",width:"20rem" }}>
             <FormControl fullWidth>
             <InputLabel id="demo-simple-select-label">Please Select Role</InputLabel>
                 <Select
@@ -100,7 +101,9 @@ const handdleError=(json)=>{
                   <MenuItem value={"admin"}>Admin</MenuItem>
                 </Select>
             </FormControl>
-      </Box>
+        </Box> */}
+
+
       <Button className="Button" variant="contained" onClick={saveData} sx={{width:"20rem"}}>Register</Button>       
         </div>
       </div>

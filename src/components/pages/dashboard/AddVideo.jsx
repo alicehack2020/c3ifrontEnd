@@ -49,8 +49,6 @@ fetch("http://localhost:8000/api/course/addvideo", {
 
 
 const handdleError=(json)=>{
-  console.log(json.status);
-
   var status=json.status
     if(status==="failed")
     {
@@ -72,13 +70,18 @@ const handdleError=(json)=>{
 
       <div className="main">
         <div className='register_form'>
-            <TextField className='TextField' label="Enter video name" variant="outlined" value={title} onChange={(e)=>setTitle(e.target.value)} sx={{marginTop:"60px"}}/>
-            <TextField className='TextField' label="Enter video information" variant="outlined" value={info} onChange={(e)=>setInfo(e.target.value)} sx={{marginTop:"30px"}}/>
-            <TextField className='TextField' label="Enter video information" variant="outlined" value={video_url} onChange={(e)=>setVideo_url(e.target.value)} sx={{marginTop:"30px"}}/>
-            <TextField className='TextField' label="Enter video information" variant="outlined" value={pdf_url} onChange={(e)=>setPdf_url(e.target.value)} sx={{marginTop:"30px"}}/>
-            <TextField className='TextField' label="Enter video information" variant="outlined" value={text_url} onChange={(e)=>setText_url(e.target.value)} sx={{marginTop:"30px"}}/>
-            <TextField className='TextField' label="Enter video information" variant="outlined" value={doc_url} onChange={(e)=>setDoc_url(e.target.value)} sx={{marginTop:"30px"}}/>
-             <Button className="Button" variant="contained" onClick={saveData} sx={{width:"20rem"}}>Add</Button>       
+            <h3>Add Video</h3>
+            <TextField className='TextField' label="Enter video name" variant="outlined" value={title} onChange={(e)=>setTitle(e.target.value)} sx={{marginTop:"20px"}}/>
+            <TextField className='TextField' label="Enter video info" variant="outlined" value={info} onChange={(e)=>setInfo(e.target.value)} sx={{marginTop:"20px",marginBottom:"10px"}}/>
+        
+             <Button variant="outlined" sx={{marginTop:"10px"}}>Upload Image</Button>
+             <Button variant="outlined" sx={{marginTop:"10px"}}>Upload Pdf</Button>
+             <Button variant="outlined" sx={{marginTop:"10px"}}>Upload Video</Button>
+             <Button variant="outlined" sx={{marginTop:"10px"}}>Upload doc</Button>
+             <Button variant="outlined" sx={{marginTop:"10px"}}>Upload txt</Button>
+             
+            <Button className="Button" variant="contained"   onClick={saveData} sx={{width:"20rem",marginTop:"10px"}}>Add</Button>       
+            <p>note:<br></br>after completion of file upload clik on add button</p>
         </div>
       </div>
 
