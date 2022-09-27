@@ -1,5 +1,5 @@
 -----------------admin login---------------------------------------------- <br />
-email:admi@gmail.com
+email:admin@gmail.com
 password:Pass@1234
 
 
