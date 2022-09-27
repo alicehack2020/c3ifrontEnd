@@ -14,6 +14,7 @@ import AddVideo from './components/pages/dashboard/AddVideo';
 
 import StudentVideoList from './components/pages/dashboard/StudentVideoList';
 import EnrollCourse from './components/pages/dashboard/EnrollCourse';
+import AddStudent from './components/pages/dashboard/AddStudent';
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
 
         <Route path='/student/videolist/:course_id' element={<StudentVideoList/>}/>
         <Route path='/student/enrollcourse/:course_id' element={<EnrollCourse/>}/>
+
+        <Route path='/admin/addstudent' element={<AddStudent/>}/>
 
 
 
