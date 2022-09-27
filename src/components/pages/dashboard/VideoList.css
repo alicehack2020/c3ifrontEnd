@@ -1,0 +1,8 @@
+.banner{
+    width: 100%;
+}
+.gride_video_list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    column-gap: 20px;
+}

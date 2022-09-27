@@ -108,7 +108,7 @@ const AddVideo = () => {
 
     // progress can be paused and resumed. It also exposes progress updates.
     // Receives the storage reference and the file to upload.
-    const uploadTask = uploadBytesResumable(storageRef, file);
+    const uploadTask = uploadBytesResumable(storageRef, fileVideo);
 
     uploadTask.on(
         "state_changed",
@@ -140,7 +140,7 @@ const AddVideo = () => {
 
     // progress can be paused and resumed. It also exposes progress updates.
     // Receives the storage reference and the file to upload.
-    const uploadTask = uploadBytesResumable(storageRef, file);
+    const uploadTask = uploadBytesResumable(storageRef, filePdf);
 
     uploadTask.on(
         "state_changed",
@@ -172,7 +172,7 @@ const AddVideo = () => {
 
     // progress can be paused and resumed. It also exposes progress updates.
     // Receives the storage reference and the file to upload.
-    const uploadTask = uploadBytesResumable(storageRef, file);
+    const uploadTask = uploadBytesResumable(storageRef, fileDoc);
 
     uploadTask.on(
         "state_changed",
@@ -204,7 +204,7 @@ const AddVideo = () => {
 
     // progress can be paused and resumed. It also exposes progress updates.
     // Receives the storage reference and the file to upload.
-    const uploadTask = uploadBytesResumable(storageRef, file);
+    const uploadTask = uploadBytesResumable(storageRef, fileText);
 
     uploadTask.on(
         "state_changed",

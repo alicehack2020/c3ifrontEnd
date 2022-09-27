@@ -3,7 +3,7 @@ import { getStorage } from "firebase/storage";
  
 // Initialize Firebase
 const app = initializeApp ({
-   apiKey: "AIzaSyBkfOmbUDG5G8CJXl0eowILhRooi9GkXf4",
+  apiKey: "AIzaSyBkfOmbUDG5G8CJXl0eowILhRooi9GkXf4",
   authDomain: "c3ihub.firebaseapp.com",
   projectId: "c3ihub",
   storageBucket: "c3ihub.appspot.com",
