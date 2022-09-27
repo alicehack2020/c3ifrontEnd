@@ -47,27 +47,29 @@ const handdleError=(json)=>{
     {
       
      // console.log(json.data);
-      const {role,isActive}=json.data;
+      const {role,isActive,_id}=json.data;
 
+      localStorage.setItem("user",JSON.stringify(json.data))
+      
       if(role=="admin")
       {
-        if(isActive==true)
-        {
+        //if(isActive==true)
+        //{
           navigate("/admin")
-        }
-        else{
-          alert("please contact admin")
-        }
+       // }
+        //else{
+         // alert("please contact admin")
+        //}
       }
       else if(role=="teacher")
       {
-        if(isActive==true)
-        {
+        //if(isActive==true)
+        //{
           navigate("/teacher")
-        }
-        else{
-          alert("please contact admin")
-        }
+        //}
+        //else{
+       //   alert("please contact admin")
+       // }
       }
       else{
         //console.log("student");

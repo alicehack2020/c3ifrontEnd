@@ -12,6 +12,9 @@ import AddCourse from './components/pages/dashboard/AddCourse';
 import VideoList from './components/pages/dashboard/VideoList';
 import AddVideo from './components/pages/dashboard/AddVideo';
 
+import StudentVideoList from './components/pages/dashboard/StudentVideoList';
+import EnrollCourse from './components/pages/dashboard/EnrollCourse';
+
 function App() {
   return (
      <>
@@ -25,12 +28,12 @@ function App() {
         <Route path='/teacher' element={<Teacher/>}/>
 
         <Route path='/admin/addteacher' element={<AddTeacher/>}/>
-
         <Route path='/admin/addcourse' element={<AddCourse/>}/>
-
         <Route path='/admin/videolist/:course_id' element={<VideoList/>}/>
-
         <Route path='/admin/addvideo/:course_id' element={<AddVideo/>}/>
+
+        <Route path='/student/videolist/:course_id' element={<StudentVideoList/>}/>
+        <Route path='/student/enrollcourse/:course_id' element={<EnrollCourse/>}/>
 
 
 

@@ -7,6 +7,9 @@ const Admin = () => {
   const [student,setStudent]=useState([])
   const [teacher,setTeacher]=useState([])
   const [course,setCourse]=useState([])
+  
+  const {id,courses}=JSON.parse(localStorage.getItem("user"))
+
 
   const navigate=useNavigate()
 
