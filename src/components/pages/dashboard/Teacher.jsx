@@ -6,12 +6,8 @@ import "./Admin.css"
 const Teacher = () => {
   const [student,setStudent]=useState([])
   const [course,setCourse]=useState([])
-  
-  // const {id,courses}=JSON.parse(localStorage.getItem("user"))
-
 
   const navigate=useNavigate()
-
   useEffect(()=>{
      fetch("https://c3ihub.herokuapp.com/api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
     },[])
