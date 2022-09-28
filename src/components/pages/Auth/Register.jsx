@@ -30,6 +30,7 @@ const Register = () => {
     // {
     //   setRole("student")
     // }
+    
     const role="student"
     const data={
       name:name,

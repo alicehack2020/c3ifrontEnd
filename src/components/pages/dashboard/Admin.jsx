@@ -51,7 +51,7 @@ const Admin = () => {
 const deleteUser=(userid)=>{
  const data={user_Id:userid}
 // POST request using fetch()
-fetch("http://localhost:8000/api/user/deleteUser", {
+fetch("https://c3ihub.herokuapp.com/api/user/deleteUser", {
 	method: "DELETE",
 	body: JSON.stringify(data),
 	headers: {
