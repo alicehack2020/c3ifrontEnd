@@ -13,7 +13,7 @@ const Teacher = () => {
   const navigate=useNavigate()
 
   useEffect(()=>{
-     fetch("https://c3ihub.herokuapp.com/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
+     fetch("https://c3ihub.herokuapp.com/api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
     },[])
 
     useEffect(()=>{
