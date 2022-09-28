@@ -31,7 +31,7 @@ const AddStudent = () => {
 
 
 // POST request using fetch()
-fetch("http://localhost:8000/api/user/register", {
+fetch("https://c3ihub.herokuapp.com/api/user/register", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

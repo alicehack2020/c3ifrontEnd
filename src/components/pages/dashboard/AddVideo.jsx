@@ -243,7 +243,7 @@ const AddVideo = () => {
 
 
 // POST request using fetch()
-fetch("http://localhost:8000/api/course/addvideo", {
+fetch("https://c3ihub.herokuapp.com/api/course/addvideo", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

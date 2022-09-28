@@ -20,7 +20,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 
 // POST request using fetch()
-fetch("http://localhost:8000/api/user/addcourseinuser", {
+fetch("https://c3ihub.herokuapp.com/api/user/addcourseinuser", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

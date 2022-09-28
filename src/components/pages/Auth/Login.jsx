@@ -20,7 +20,7 @@ const Login = () => {
 
 
 // POST request using fetch()
-fetch("http://localhost:8000/api/user/login", {
+fetch("https://c3ihub.herokuapp.com/api/user/login", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

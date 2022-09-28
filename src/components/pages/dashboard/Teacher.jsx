@@ -13,11 +13,11 @@ const Teacher = () => {
   const navigate=useNavigate()
 
   useEffect(()=>{
-     fetch("http://localhost:8000/api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
+     fetch("https://c3ihub.herokuapp.com/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
     },[])
 
     useEffect(()=>{
-      fetch("http://localhost:8000/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
+      fetch("https://c3ihub.herokuapp.com/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
      },[])
 
 
@@ -39,7 +39,7 @@ const Teacher = () => {
 const deleteUser=(userid)=>{
  const data={user_Id:userid}
 // POST request using fetch()
-fetch("http://localhost:8000/api/user/deleteUser", {
+fetch("https://c3ihub.herokuapp.com/api/user/deleteUser", {
 	method: "DELETE",
 	body: JSON.stringify(data),
 	headers: {
@@ -59,7 +59,7 @@ const handdleError=(json)=>{
     }
     else
     {
-      fetch("http://localhost:8000/api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
+      fetch("https://c3ihub.herokuapp.com/api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
     }
 }
 
@@ -69,7 +69,7 @@ const handdleError=(json)=>{
 const deleteCourse=(courseid)=>{
   const data={course_Id:courseid}
  // POST request using fetch()
- fetch("http://localhost:8000/api/course/deleteCourse", {
+ fetch("https://c3ihub.herokuapp.com/api/course/deleteCourse", {
    method: "DELETE",
    body: JSON.stringify(data),
    headers: {
@@ -90,7 +90,7 @@ const deleteCourse=(courseid)=>{
     }
     else
     {
-      fetch("http://localhost:8000/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
+      fetch("https://c3ihub.herokuapp.com/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
     }
 }
 

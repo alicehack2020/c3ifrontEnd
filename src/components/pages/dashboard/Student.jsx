@@ -12,7 +12,7 @@ const Student = () => {
   const navigate=useNavigate()
 
     useEffect(()=>{
-      fetch("http://localhost:8000/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
+      fetch("https://c3ihub.herokuapp.com/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
      },[])
 
 
@@ -22,7 +22,7 @@ const Student = () => {
           user_id:userDatalocal._id
          }
           // POST request using fetch()
-        fetch("http://localhost:8000/api/user/details", {
+        fetch("https://c3ihub.herokuapp.com/api/user/details", {
           method: "POST",
           body: JSON.stringify(data),
           headers: {

@@ -19,7 +19,7 @@ const StudentVideoList = () => {
       course_id:course_id
     }
     // POST request using fetch()
-    fetch("http://localhost:8000/api/course/videolist", {
+    fetch("https://c3ihub.herokuapp.com/api/course/videolist", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

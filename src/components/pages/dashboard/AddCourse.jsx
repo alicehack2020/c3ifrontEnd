@@ -22,7 +22,7 @@ const AddCourse = () => {
 
 
 // POST request using fetch()
-fetch("http://localhost:8000/api/course/add", {
+fetch("https://c3ihub.herokuapp.com/api/course/add", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {
