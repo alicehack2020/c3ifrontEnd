@@ -30,12 +30,12 @@ const Register = () => {
     // {
     //   setRole("student")
     // }
-    
+    const role="student"
     const data={
       name:name,
       email:email,
       password:password,
-      role:"student",
+      role:role,
       password_confirmation:passwordConfirmation
     }
 
