@@ -19,23 +19,23 @@ const Register = () => {
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const [passwordConfirmation,setPasswordConfirmation]=useState("")
-  const [role,setRole]=useState("")
+  //const [role,setRole]=useState("")
 
   const navigate=useNavigate()
 
 
   const saveData=()=>{
 
-    if(role==="")
-    {
-      setRole("student")
-    }
+    // if(role==="")
+    // {
+    //   setRole("student")
+    // }
     
     const data={
       name:name,
       email:email,
       password:password,
-      role:role,
+      role:"student",
       password_confirmation:passwordConfirmation
     }
 
