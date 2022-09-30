@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import {useNavigate } from 'react-router-dom'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import "./Admin.css"
+import {url} from "../../../config/url.js"
+
 const Admin = () => {
   const [student,setStudent]=useState([])
   const [teacher,setTeacher]=useState([])
@@ -14,16 +16,16 @@ const Admin = () => {
   const navigate=useNavigate()
 
   useEffect(()=>{
-    fetch("https://c3ihub.herokuapp.com/api/user/teacherlist").then(res=>res.json()).then(data=>setTeacher(data.data))
+    fetch(url+"api/user/teacherlist").then(res=>res.json()).then(data=>setTeacher(data.data))
    },[])
 
 
   useEffect(()=>{
-     fetch("https://c3ihub.herokuapp.com/api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
+     fetch(url+"api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
     },[])
 
     useEffect(()=>{
-      fetch("https://c3ihub.herokuapp.com/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
+      fetch(url+"api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
      },[])
 
 
@@ -51,7 +53,7 @@ const Admin = () => {
 const deleteUser=(userid)=>{
  const data={user_Id:userid}
 // POST request using fetch()
-fetch("https://c3ihub.herokuapp.com/api/user/deleteUser", {
+fetch(url+"api/user/deleteUser", {
 	method: "DELETE",
 	body: JSON.stringify(data),
 	headers: {
@@ -71,8 +73,8 @@ const handdleError=(json)=>{
     }
     else
     {
-      fetch("https://c3ihub.herokuapp.com/api/user/teacherlist").then(res=>res.json()).then(data=>setTeacher(data.data))
-      fetch("https://c3ihub.herokuapp.com/api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
+      fetch(url+"api/user/teacherlist").then(res=>res.json()).then(data=>setTeacher(data.data))
+      fetch(url+"api/user/studentlist").then(res=>res.json()).then(data=>setStudent(data.data))  
     }
 }
 
@@ -82,7 +84,7 @@ const handdleError=(json)=>{
 const deleteCourse=(courseid)=>{
   const data={course_Id:courseid}
  // POST request using fetch()
- fetch("https://c3ihub.herokuapp.com/api/course/deleteCourse", {
+ fetch(url+"api/course/deleteCourse", {
    method: "DELETE",
    body: JSON.stringify(data),
    headers: {
@@ -103,7 +105,7 @@ const deleteCourse=(courseid)=>{
     }
     else
     {
-      fetch("https://c3ihub.herokuapp.com/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
+      fetch(url+"api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
     }
 }
 

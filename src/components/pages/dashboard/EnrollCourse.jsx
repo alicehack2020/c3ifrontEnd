@@ -3,6 +3,7 @@ import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "../Auth/Registration.css"
+import {url} from "../../../config/url.js"
 
 import { useNavigate, useParams } from 'react-router-dom';
  const EnrollCourse = () => 
@@ -12,15 +13,15 @@ import { useNavigate, useParams } from 'react-router-dom';
   const course_id=params.course_id;
   const userData=JSON.parse(localStorage.getItem("user"))
   const saveData=()=>{
-
-    const data={
+  
+     const data={
       course_id:course_id,
       user_id:userData._id
     }
 
 
 // POST request using fetch()
-fetch("https://c3ihub.herokuapp.com/api/user/addcourseinuser", {
+fetch(url+"api/user/addcourseinuser", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

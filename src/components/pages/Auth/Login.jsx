@@ -4,13 +4,14 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import "./Registration.css"
 import { useNavigate } from 'react-router-dom'; 
+import {url} from "../../../config/url.js"
 const Login = () => {
 
    const [email,setEmail]=useState("")
    const [password,setPassword]=useState("")
    const navigate=useNavigate()
   
-
+   
   const saveData=()=>{
 
     const data={
@@ -20,7 +21,7 @@ const Login = () => {
 
 
 // POST request using fetch()
-fetch("https://c3ihub.herokuapp.com/api/user/login", {
+fetch(url+"api/user/login", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

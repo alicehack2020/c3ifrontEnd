@@ -8,6 +8,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin';
 import storage  from "../../../config/firebaseconfig.js";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import {url} from "../../../config/url.js"
 
 const AddVideo = () => {
 
@@ -243,7 +244,7 @@ const AddVideo = () => {
 
 
 // POST request using fetch()
-fetch("https://c3ihub.herokuapp.com/api/course/addvideo", {
+fetch(url+"api/course/addvideo", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

@@ -4,6 +4,8 @@ import {  useParams } from 'react-router-dom'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import "./Admin.css"
 import "./VideoList.css"
+import {url} from "../../../config/url.js"
+
 const StudentVideoList = () => {
   
   const [videlist,setVideoList]=useState([])
@@ -19,7 +21,7 @@ const StudentVideoList = () => {
       course_id:course_id
     }
     // POST request using fetch()
-    fetch("https://c3ihub.herokuapp.com/api/course/videolist", {
+    fetch(url+"api/course/videolist", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {
@@ -48,6 +50,7 @@ const StudentVideoList = () => {
   return (
     <div>
         <NavBarAfterLogin/>
+        <h4>video list</h4>
         <div className='gride_video_list'>
                     {
                       videlist.map(videlist => (

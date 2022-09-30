@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
-
-
 import "../Auth/Registration.css"
 import { useNavigate } from 'react-router-dom';
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin';
+import {url} from "../../../config/url.js"
 
 const AddCourse = () => {
 
@@ -22,7 +21,7 @@ const AddCourse = () => {
 
 
 // POST request using fetch()
-fetch("https://c3ihub.herokuapp.com/api/course/add", {
+fetch(url+"api/course/add", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

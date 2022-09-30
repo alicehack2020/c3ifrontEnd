@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 
 import "./Registration.css"
 import { useNavigate } from 'react-router-dom';
+import {url} from "../../../config/url.js"
 
 const Register = () => {
 
@@ -42,7 +43,7 @@ const Register = () => {
 
 
 // POST request using fetch()
-fetch("https://c3ihub.herokuapp.com/api/user/register", {
+fetch(url+"api/user/register", {
 	method: "POST",
 	body: JSON.stringify(data),
 	headers: {

@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react'
 import {  useNavigate } from 'react-router-dom'
 import NavBarAfterLogin from '../navbar/NavBarAfterLogin'
 import "./Admin.css"
+import {url} from "../../../config/url.js"
+
 const Student = () => { 
   const [course,setCourse]=useState([])
   const [userData,setuserData]=useState([])
@@ -12,7 +14,7 @@ const Student = () => {
   const navigate=useNavigate()
 
     useEffect(()=>{
-      fetch("https://c3ihub.herokuapp.com/api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
+      fetch(url+"api/course/list").then(res=>res.json()).then(data=>setCourse(data.data))  
      },[])
 
 
@@ -22,7 +24,7 @@ const Student = () => {
           user_id:userDatalocal._id
          }
           // POST request using fetch()
-        fetch("https://c3ihub.herokuapp.com/api/user/details", {
+        fetch(url+"api/user/details", {
           method: "POST",
           body: JSON.stringify(data),
           headers: {
